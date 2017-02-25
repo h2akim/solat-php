@@ -331,7 +331,7 @@ class Solat
                 return $text . $this->timeList();
             }
         } else {
-
+            $location = self::$timeFull['SGR03'];
         }
 
         $client = new Client();
@@ -361,13 +361,10 @@ class Solat
      */
     public function timeList()
     {
-
         $usage = [];
 
         foreach (self::$timeFull as $key => $value) {
-
             $usage[] = "[$key] -> " . $value['location'];
-
         }
 
         $usage = implode("\n", $usage);
